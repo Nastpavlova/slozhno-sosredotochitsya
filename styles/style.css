@@ -3,30 +3,56 @@
 
 .page {
   font-family: "IBM Plex mono", sans-serif;
+  width: 100%;
+  position: relative;
 }
 
 .header {
   background-image: url(/images/cover-image-dark.png);
+  width: 100%;
 }
 
 .decorated-zone {
-  padding: 20px 0;
+  padding: 20px 20px 20px 0;
 }
 
-.decorated-items {
+.decorated__items {
   position: absolute;
-  right: 20px;
-  top: 20px;
   min-width: 25px;
   min-height: 25px;
-  background-color: #fff;
-  border: var(--accent-color);
-  border-right: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.decorated-items::before {
+.decorated__items-top {
+  right: 20px;
+  top: 20px;
+  border-left: transparent;
+  border-bottom: transparent;
+}
+
+.decorated__items-bottom {
+  left: 20px;
+  bottom: 20px;
+  border-right: transparent;
+  border-top: transparent;
+}
+
+.decorated__items-top::before {
   content: "REC";
   color: var(--accent-color);
+  position: absolute;
+  right: 28px;
+}
+
+.decorated__items-round {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
 }
 
 
@@ -53,16 +79,42 @@
 .header__theme-menu-button {
   width: 100%;
   height: 100%;
+  padding: 0;
   background-color: transparent;
   border: none;
   color: var(--accent-color);
   text-transform: lowercase;
   font-weight: normal;
   font-size: 18px;
+
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--accent-color);
+  outline: 1px solid var(--accent-color);
+}
+
+.header__title {
+  font-weight: bold;
+  font-size: 157px;
+  color: #db00ff;
+  margin: 273px 0 114px 0;
+  text-shadow: 4px 4px var(--accent-color);
+}
+
+.header__container {
+  display: flex;
+  justify-content: end;
+}
+
+.header__text {
+  background-color: var(--accent-color);
+  color: #000028;
+  font-weight: bold;
+  font-size: 18px;
+  max-width: 513px;
 }
 
 @media (min-width: 375px) {
