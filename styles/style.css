@@ -1,18 +1,47 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 
-/* .page {
-  сохраните в разметке и стилях класс page. На его основе работает скрипт. 
-} */
+.page {
+  font-family: "IBM Plex mono", sans-serif;
+}
 
 .header {
   background-image: url(/images/cover-image-dark.png);
 }
 
+.decorated-zone {
+  padding: 20px 0;
+}
+
+.decorated-items {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  min-width: 25px;
+  min-height: 25px;
+  background-color: #fff;
+  border: var(--accent-color);
+  border-right: var(--accent-color);
+}
+
+.decorated-items::before {
+  content: "REC";
+  color: var(--accent-color);
+}
+
+
+
+.header__theme-menu {
+
+}
+
+
 .header__theme-menu-list {
   display: flex;
   flex-direction: row;
   gap: 10px;
+  justify-content: center;
+
 }
 
 .header__theme-menu-item {
@@ -20,10 +49,16 @@
   height: 26px;
 }
 
+
 .header__theme-menu-button {
   width: 100%;
   height: 100%;
   background-color: transparent;
+  border: none;
+  color: var(--accent-color);
+  text-transform: lowercase;
+  font-weight: normal;
+  font-size: 18px;
 }
 
 .header__theme-menu-button_active {
