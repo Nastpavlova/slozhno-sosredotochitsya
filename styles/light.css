@@ -5,8 +5,14 @@
 */
 
 .page.theme_light {
-  --accent-color: #ff8dcb;
-  --title-text-color: #ffc2e6;
   --background-image: url(../images/cover-image-light.png);
-
+  --background-color: #fff1f7;
+  
+  --color-main-text: #353430;
+  --color-title: #353430;
+  --color-title-alpha: rgba(50, 49, 45, 0.4);
+  --color-main-title: #ffc2e6;;
+  --color-accent: #ff8dcb;
+  --color-accent-main-text: #353430;
+  --color-text-shadow: #ff0070;
 }

@@ -1,16 +1,31 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+@media (min-width: 375px) {
+  .main__title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+}
 
+@media (min-width: 768px) {
+  .main__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);  
+  }
+}
+
+@media (min-width: 1024px) {
+  /* .header {
+    
+  } */
+}
 
 .page {
   font-family: "IBM Plex mono", sans-serif;
-  /* width: 100%; */
   position: relative;
   font-size: 18px;
   background-color: var(--background-color);
 }
 
 .header {
-  background-image: url(/images/cover-image-dark.png);
+  background-image: var(--background-image);
   background-size: cover;
   background-position: center;
   margin-bottom: 60px;
@@ -25,7 +40,7 @@
   position: absolute;
   min-width: 26px;
   min-height: 26px;
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--color-title);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,7 +64,7 @@
   content: "REC";
   line-height: 25%;
   font-size: 18px;
-  color: var(--accent-color);
+  color: var(--color-title);
   position: absolute;
   right: 28px;
 }
@@ -58,16 +73,13 @@
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background-color: var(--accent-color);
-  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--color-title);
+  box-shadow: 0 0 4px 2px var(--color-title);
 }
-
-
 
 .header__theme-menu {
   width: calc(100% + 20px); /*20px - padding right*/
 }
-
 
 .header__theme-menu-list {
   display: flex;
@@ -80,7 +92,6 @@
   height: 26px;
 }
 
-
 .header__theme-menu-button {
   width: 100%;
   height: 100%;
@@ -88,33 +99,41 @@
   background-color: transparent;
   border: transparent;
   line-height: 118%;
-  color: var(--accent-color);
+  color: var(--color-title);
   text-transform: lowercase;
-  font-weight: normal;
-  font-size: 18px;
-
   display: flex;
   justify-content: center;
-  margin: 0 auto;
 }
 
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--color-title-alpha);
+  outline-offset: -1px;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+  border-bottom: 1px solid var(--color-title);
+}
+
+
 .header__theme-menu-button_active {
-  outline: 1px solid var(--accent-color);
+  outline: 1px solid var(--color-title);
   outline-offset: -1px;
   pointer-events: none;
 }
 
 .main__title {
   font-weight: bold;
-  font-size: 157px;
-  color: #db00ff;
-  text-shadow: 2px 2px var(--accent-color);
+  color: var(--color-main-title);
+  text-shadow: 2px 2px var(--color-text-shadow);
   line-height: 83%;
 }
 
+
+
 .header__title {
   margin: 273px 0 114px 0;
-  text-shadow: 4px 4px var(--accent-color);
+  text-shadow: 4px 4px var(--color-text-shadow);
 }
 
 .header__container {
@@ -131,15 +150,14 @@
 }
 
 .title-decor {
-  background-color: var(--accent-color);
-  color: #000028;
+  background-color: var(--color-accent);
+  color: var(--color-accent-main-text);
   font-size: 18px;
   width: 100%;
 }
 
 .main {
   padding: 0 20px;
-
 }
 
 .section {
@@ -169,6 +187,11 @@ section:last-child {
 .section__containers-columns {
   flex-direction: column;
   max-width: 649px;
+  line-height: 23.4px;
+}
+
+.section__containers-columns .section-container .title-decor:not(:first-child) {
+  margin-top: 10px;
 }
 
 .section-container-row {
@@ -176,24 +199,29 @@ section:last-child {
 }
 
 .section-container {
-  color: var(--text-color);
+  color: var(--color-main-text);
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 .section__title {
-  color: var(--accent-color);
+  color: var(--color-title);
   font-size: 18px;
-
   width: 334.89px;
 }
 
-
-
 .text-link {
   text-decoration: none;
-  text-shadow: 2px 2px var(--accent-color);
+  text-shadow: 2px 2px var(--color-accent);
+}
+
+.text-link:hover {
+  border-bottom: 1px solid var(--color-main-text);
+}
+
+.text-link:focus {
+  outline: 1px solid var(--color-main-text);
 }
 
 .galery {
@@ -208,10 +236,7 @@ section:last-child {
   grid-template-rows: 260px 315px 428px;
   gap: 20px;
   max-width: 100%; 
-
-
 }
-
 
 .containers-image {
   width: 100%;
@@ -249,24 +274,3 @@ section:last-child {
   align-items: center;
 }
 
-
-
-
-
-@media (min-width: 375px) {
-  /* .header {
-    
-  } */
-}
-
-@media (min-width: 768px) {
-  /* .header {
-    
-  } */
-}
-
-@media (min-width: 1024px) {
-  /* .header {
-    
-  } */
-}
