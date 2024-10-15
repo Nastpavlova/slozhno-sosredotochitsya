@@ -1,20 +1,254 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 @media (min-width: 375px) {
+  /* .page::after {  
+    opacity: 0.5;
+  } сказали поздно, что прозрачность это бред макета :((*/
+  
   .main__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .decorated-zone {
+    padding: 10px;  
+  }
+
+  .decorated__items-top {
+    right: 10px;
+    top: 10px;
+  }
+
+  .decorated__items-bottom {
+    left: 10px;
+    bottom: 10px;
+  }
+
+  .header .decorated__items-top::before {
+    right: calc(38px - 10px); /*10px - padding*/
+  }
+
+  .header__theme-menu {
+    display: flex;
+    justify-content: end;
+    padding-block-start: calc(75px - 10px); /*10px - padding*/
+  }
+
+  .header__theme-menu-list {
+    flex-direction: column;
+  }
+
+  .header__title {
+    margin: 65px 0 55px 0;
+  }
+
+  .header__container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: calc(66px - 10px); /*10px - padding*/
+  }
+
+  .header__text {
+    max-inline-size: 364px;
+  }
+
+  .main {
+    padding: 0 10px;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  section:not(:last-child) {
+    margin-bottom: 50px;
+  }
+
+  section:last-child {
+    margin-bottom: 40px;
+  }
+
+  .section__title {
+    inline-size: 100%; /* ну, такие цифры в макете :| */
+  }
+
+  .section__containers-columns {
+    inline-size: 100%;
+  }
+
+  .section__containers {
+    flex-direction: column;
+  }
+
+  .galery {
+    gap: 10px;
+  }
+
+  .containers-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-block-size: 1366px;
+  }
+
+  .footer {
+    block-size: 668px;
+  }
+
 }
 
 @media (min-width: 768px) {
   .main__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);  
   }
+
+  .header {
+    margin-bottom: 60px;
+  }
+
+  .decorated-zone {
+    padding: 20px 20px 20px 0;  
+  }
+
+  .decorated__items-top {
+    right: 20px;
+    top: 20px;
+  }
+  
+  .decorated__items-bottom {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .header .decorated__items-top::before {
+    right: calc(48px - 20px); /*20px - padding*/
+  }
+
+  .header__theme-menu {
+    padding-block-start: calc(192px - 20px); /*20px - padding*/
+  }
+  .header__title {
+    margin: 173px 0 162px 0;
+  }
+
+  .header__container {
+    justify-content: end;
+    margin-bottom: calc(183px - 20px); /*20px - padding*/
+  }
+
+  .header__text {
+    max-inline-size: 364px;
+  }
+
+  .main {
+    padding: 0 20px;
+  }
+
+  .section {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  section:not(:last-child) {
+    margin-bottom: 80px;
+  }
+
+  section:last-child {
+    margin-bottom: 60px;
+  }
+
+  .section__title {
+    inline-size: 236px; 
+  }
+
+  .section__containers-columns {
+    flex-basis: 472px;
+    flex-grow: 2;
+  }
+
+  .section-rows {
+    flex-direction: column;
+  }
+
+  .galery {
+    gap: 20px;
+  }
+
+  .containers-images {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    /* grid-template-rows: 260px 315px 428px; почему я сначала это написала че к чему*/
+    gap: 20px;
+    max-inline-size: 100%; 
+    min-block-size: 780px;
+  }
+
+  .footer {
+    block-size: 1024px;
+  }
 }
 
 @media (min-width: 1024px) {
-  /* .header {
-    
+  /* .page::after {  
+    opacity: 1;
   } */
+  
+  .header__theme-menu {
+    inline-size: calc(100% + 20px); /*20px - padding right, width (inline-size) - чтобы не брать в расчет padding .decorated-zone */
+    padding-block-start: 0px;
+    justify-content: center;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+  .header__title {
+    margin: 273px 0 114px 0;
+  }
+
+  .header__container {
+    margin-bottom: calc(134px - 20px); /*20px - padding*/
+  }
+
+  .header__text {
+    max-inline-size: 491px;
+  }
+
+  .section {
+    gap: 19.93px; /*в макете такое число :|*/
+  }
+
+  .section__title {
+    inline-size: 314.96px; /*в макете такое число :|*/
+  }
+
+  .section__containers-columns {
+    inline-size: 648.92px; /*в макете такое число :|*/
+  }
+
+  .section__containers {
+    flex-direction: row;
+  }
+
+  .section-rows {
+    flex-direction: column;
+  }
+
+  .section-container-row {
+    inline-size: calc((100% - 40px)/3);
+  }
+
+  .containers-images {
+    max-block-size: 100%; 
+  }
+
+  .footer {
+    block-size: 768px;
+  }
 }
 
 .page {
@@ -24,22 +258,26 @@
   background-color: var(--background-color);
 }
 
-.header {
+.page::after {  
+  content: '';
+  position: fixed;
+  top:0;
+  inline-size: 100vw;
+  block-size: 100vh;
+  z-index: -1;
   background-image: var(--background-image);
   background-size: cover;
   background-position: center;
-  margin-bottom: 60px;
-  position: relative;
 }
 
-.decorated-zone {
-  padding: 20px 20px 20px 0;  
+.header {
+  position: relative;
 }
 
 .decorated__items {
   position: absolute;
-  min-width: 26px;
-  min-height: 26px;
+  min-inline-size: 26px;
+  min-block-size: 26px;
   border: 1px solid var(--color-title);
   display: flex;
   justify-content: center;
@@ -47,55 +285,43 @@
 }
 
 .decorated__items-top {
-  right: 20px;
-  top: 20px;
   border-left: transparent;
   border-bottom: transparent;
 }
 
 .decorated__items-bottom {
-  left: 20px;
-  bottom: 19px;
-  border-right: transparent;
-  border-top: transparent;
+  border-inline-end: transparent;
+  border-block-start: transparent;
 }
 
 .header .decorated__items-top::before {
   content: "REC";
-  line-height: 25%;
-  font-size: 18px;
   color: var(--color-title);
   position: absolute;
-  right: 28px;
 }
 
-.header .decorated__items-round {
-  width: 9px;
-  height: 9px;
+.decorated__items-round {
+  display: block;
+  inline-size: 9px;
+  block-size: 9px;
   border-radius: 50%;
   background-color: var(--color-title);
   box-shadow: 0 0 4px 2px var(--color-title);
 }
 
-.header__theme-menu {
-  width: calc(100% + 20px); /*20px - padding right*/
-}
-
 .header__theme-menu-list {
   display: flex;
-  justify-content: center;
   gap: 10px;
 }
 
 .header__theme-menu-item {
-  width: 70px;
-  height: 26px;
+  inline-size: 70px;
+  block-size: 26px;
 }
 
 .header__theme-menu-button {
-  width: 100%;
-  height: 100%;
-  padding: 0;
+  inline-size: 100%;
+  block-size: 100%;
   background-color: transparent;
   border: transparent;
   line-height: 118%;
@@ -110,11 +336,10 @@
   outline-offset: -1px;
 }
 
-.header__theme-menu-button:focus {
+.header__theme-menu-button:focus-visible {
   outline: none;
   border-bottom: 1px solid var(--color-title);
 }
-
 
 .header__theme-menu-button_active {
   outline: 1px solid var(--color-title);
@@ -129,73 +354,32 @@
   line-height: 83%;
 }
 
-
-
 .header__title {
-  margin: 273px 0 114px 0;
   text-shadow: 4px 4px var(--color-text-shadow);
-}
-
-.header__container {
-  display: flex;
-  justify-content: end;
-  margin-bottom: calc(134px - 20px);
 }
 
 .header__text {
   font-weight: bold;
-  height: 71px;
-  max-width: 491px;
-  line-height: 23.4px;
 }
 
 .title-decor {
   background-color: var(--color-accent);
   color: var(--color-accent-main-text);
   font-size: 18px;
-  width: 100%;
 }
 
-.main {
-  padding: 0 20px;
-}
-
-.section {
-  display: flex;
-  justify-content: space-between;
-}
-
-.section-rows {
-  flex-direction: column;
-  gap: 20px;
-}
-
-section:not(:last-child) {
-  margin-bottom: 80px;
-}
-
-section:last-child {
-  margin-bottom: 60px;
+.section__title {
+  color: var(--color-title);
+  font-size: 18px;
 }
 
 .section__containers {
   display: flex;
   gap: 20px;
-  line-height: 23.4px;
 }
 
 .section__containers-columns {
   flex-direction: column;
-  max-width: 649px;
-  line-height: 23.4px;
-}
-
-.section__containers-columns .section-container .title-decor:not(:first-child) {
-  margin-top: 10px;
-}
-
-.section-container-row {
-  width: calc((100% - 40px)/3);
 }
 
 .section-container {
@@ -205,42 +389,35 @@ section:last-child {
   gap: 10px;
 }
 
-.section__title {
-  color: var(--color-title);
-  font-size: 18px;
-  width: 334.89px;
-}
-
 .text-link {
   text-decoration: none;
   text-shadow: 2px 2px var(--color-accent);
+}
+
+.section-rows {
+  gap: 20px;
+}
+
+.section__containers-columns .section-container .title-decor:not(:first-child) { /*отступ между двумя абзацами с акцентным фоном + 10px (как у остальных)*/
+  margin-block-start: 10px;
 }
 
 .text-link:hover {
   border-bottom: 1px solid var(--color-main-text);
 }
 
-.text-link:focus {
+.text-link:focus-visible {
   outline: 1px solid var(--color-main-text);
 }
 
 .galery {
   display: flex;
-  gap: 20px;
   flex-direction: column;
 }
 
-.containers-images {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: 260px 315px 428px;
-  gap: 20px;
-  max-width: 100%; 
-}
-
 .containers-image {
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;  
 }
 
@@ -268,9 +445,7 @@ section:last-child {
 
 .footer {
   position: relative;
-  height: 768px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-

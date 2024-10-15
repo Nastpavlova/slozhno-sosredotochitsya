@@ -28,6 +28,7 @@ function changeTheme(theme) {
   localStorage.setItem('theme', theme);
 }
 
+
 function initTheme() {
   const theme = localStorage.getItem('theme');
   if (theme) {
