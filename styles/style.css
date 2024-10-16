@@ -25,10 +25,6 @@
     bottom: 10px;
   }
 
-  .header .decorated__items-top::before {
-    right: calc(38px - 10px); /*10px - padding*/
-  }
-
   .header__theme-menu {
     display: flex;
     justify-content: end;
@@ -122,10 +118,6 @@
   .decorated__items-bottom {
     left: 20px;
     bottom: 20px;
-  }
-
-  .header .decorated__items-top::before {
-    right: calc(48px - 20px); /*20px - padding*/
   }
 
   .header__theme-menu {
@@ -276,8 +268,8 @@
 
 .decorated__items {
   position: absolute;
-  min-inline-size: 26px;
-  min-block-size: 26px;
+  inline-size: 25px;
+  block-size: 25px;
   border: 1px solid var(--color-title);
   display: flex;
   justify-content: center;
@@ -294,14 +286,15 @@
   border-block-start: transparent;
 }
 
-.header .decorated__items-top::before {
-  content: "REC";
+.decorated__items-text {
   color: var(--color-title);
   position: absolute;
+  right: calc(25px + 3px);
+  line-height: 25px;
 }
 
-.decorated__items-round {
-  display: block;
+.header .decorated__items-top::before {
+  content: "";
   inline-size: 9px;
   block-size: 9px;
   border-radius: 50%;
