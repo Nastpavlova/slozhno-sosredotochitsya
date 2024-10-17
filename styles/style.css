@@ -28,21 +28,15 @@
   .header__theme-menu {
     display: flex;
     justify-content: end;
-    padding-block-start: calc(75px - 10px); /*10px - padding*/
   }
 
   .header__theme-menu-list {
     flex-direction: column;
   }
 
-  .header__title {
-    margin: 65px 0 55px 0;
-  }
-
   .header__container {
     display: flex;
     justify-content: center;
-    margin-bottom: calc(66px - 10px); /*10px - padding*/
   }
 
   .header__text {
@@ -72,7 +66,7 @@
     inline-size: 100%; /* ну, такие цифры в макете :| */
   }
 
-  .section__containers-columns {
+  .section__containers-items {
     inline-size: 100%;
   }
 
@@ -90,11 +84,6 @@
     gap: 10px;
     min-block-size: 1366px;
   }
-
-  .footer {
-    block-size: 668px;
-  }
-
 }
 
 @media (min-width: 768px) {
@@ -120,16 +109,8 @@
     bottom: 20px;
   }
 
-  .header__theme-menu {
-    padding-block-start: calc(192px - 20px); /*20px - padding*/
-  }
-  .header__title {
-    margin: 173px 0 162px 0;
-  }
-
   .header__container {
     justify-content: end;
-    margin-bottom: calc(183px - 20px); /*20px - padding*/
   }
 
   .header__text {
@@ -157,12 +138,12 @@
     inline-size: 236px; 
   }
 
-  .section__containers-columns {
+  .section__containers-items {
     flex-basis: 472px;
     flex-grow: 2;
   }
 
-  .section-rows {
+  .section-items {
     flex-direction: column;
   }
 
@@ -178,10 +159,6 @@
     max-inline-size: 100%; 
     min-block-size: 780px;
   }
-
-  .footer {
-    block-size: 1024px;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -191,19 +168,12 @@
   
   .header__theme-menu {
     inline-size: calc(100% + 20px); /*20px - padding right, width (inline-size) - чтобы не брать в расчет padding .decorated-zone */
-    padding-block-start: 0px;
     justify-content: center;
+    align-self: start;
   }
 
   .header__theme-menu-list {
     flex-direction: row;
-  }
-  .header__title {
-    margin: 273px 0 114px 0;
-  }
-
-  .header__container {
-    margin-bottom: calc(134px - 20px); /*20px - padding*/
   }
 
   .header__text {
@@ -218,7 +188,7 @@
     inline-size: 314.96px; /*в макете такое число :|*/
   }
 
-  .section__containers-columns {
+  .section__containers-items {
     inline-size: 648.92px; /*в макете такое число :|*/
   }
 
@@ -226,20 +196,16 @@
     flex-direction: row;
   }
 
-  .section-rows {
+  .section-items {
     flex-direction: column;
   }
 
-  .section-container-row {
+  .section-container-item {
     inline-size: calc((100% - 40px)/3);
   }
 
   .containers-images {
     max-block-size: 100%; 
-  }
-
-  .footer {
-    block-size: 768px;
   }
 }
 
@@ -264,6 +230,10 @@
 
 .header {
   position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
+  block-size: 100vh;
 }
 
 .decorated__items {
@@ -286,20 +256,22 @@
   border-block-start: transparent;
 }
 
-.decorated__items-text {
-  color: var(--color-title);
-  position: absolute;
-  right: calc(25px + 3px);
-  line-height: 25px;
-}
-
-.header .decorated__items-top::before {
+.header .decorated__items-top::after {
   content: "";
   inline-size: 9px;
   block-size: 9px;
   border-radius: 50%;
   background-color: var(--color-title);
   box-shadow: 0 0 4px 2px var(--color-title);
+}
+
+.header .decorated__items-top::before {
+  content: "REC";
+  color: var(--color-title);
+  position: absolute;
+  top: 0;
+  right: calc(25px + 3px);
+  line-height: 25px;
 }
 
 .header__theme-menu-list {
@@ -371,7 +343,7 @@
   gap: 20px;
 }
 
-.section__containers-columns {
+.section__containers-items {
   flex-direction: column;
 }
 
@@ -387,11 +359,11 @@
   text-shadow: 2px 2px var(--color-accent);
 }
 
-.section-rows {
+.section-items {
   gap: 20px;
 }
 
-.section__containers-columns .section-container .title-decor:not(:first-child) { /*отступ между двумя абзацами с акцентным фоном + 10px (как у остальных)*/
+.section__containers-items .section-container .title-decor:not(:first-child) { /*отступ между двумя абзацами с акцентным фоном + 10px (как у остальных)*/
   margin-block-start: 10px;
 }
 
@@ -441,4 +413,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  block-size: 100vh;
+  min-block-size: 668px;
 }
